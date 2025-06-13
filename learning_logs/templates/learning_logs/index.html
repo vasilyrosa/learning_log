@@ -1,0 +1,24 @@
+
+{% extends "learning_logs/base.html" %}
+    
+{% block header %}
+    <div class="jumbotron">
+        <h1>Acompanhe seu aprendizado</h1>
+    </div>
+{% endblock header %}
+
+{% block content %}
+<h2>
+    {% if user.is_authenticated == False %}
+    <a href="{% url 'users:register' %}">Cadastrar uma conta</a>
+    {% endif %}
+    <br>
+    <p>O Registro de Aprendizagem ajuda você a acompanhar
+         seu aprendizado, para qualquer tópico que você esteja 
+         aprendendo.</p>
+</h2>
+<h2>
+    <p>Sempre que você aprender algo novo sobre um tópico, faça uma anotação
+resumindo o que você aprendeu.</p>
+</h2>
+{% endblock content %}     
