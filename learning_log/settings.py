@@ -135,13 +135,13 @@ BOOTSTRAP3 = {
     'include_jquery' : True,
 }
 
-#configurações para Heroku
+#configurações para Heroku e local
 if os.getcwd() == '/app':
     import dj_database_url
     DATABASES = {
-        'default':
-        dj_database_url.config(default='postgres://localhost')
+        'default': dj_database_url.config(default='postgres://localhost')
     }
+    
 
 # Honra o cabeçalho 'x-Forwarded-Proto' para request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
